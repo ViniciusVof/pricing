@@ -1,3 +1,4 @@
+import { Pricing } from 'src/pricings/entities/pricing.entity';
 import { User } from 'src/users/entities/user.entity';
 import {
   Column,
@@ -5,6 +6,7 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -34,6 +36,9 @@ export class Store {
   @ManyToOne(() => User, (user) => user.stores)
   @JoinColumn({ name: 'userId', referencedColumnName: 'id' })
   user: User;
+
+  @OneToMany(() => Pricing, (pricing) => pricing.store, { onDelete: 'CASCADE' })
+  pricings?: Pricing[];
 
   @CreateDateColumn()
   createdAt: Date;

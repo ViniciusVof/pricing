@@ -45,3 +45,27 @@ Content-Type: application/json
     "checkoutFee": "2.5",
     "gatewayFee": "0.99"
 }
+
+
+###
+
+GET http://localhost:3000/pricings
+Content-Type: application/json
+
+
+###
+POST http://localhost:3000/pricings
+Content-Type: application/json
+
+{
+  "storeId": "db7bed37-0013-4b5d-9e79-95432be1c959",
+  "productName": "Produto Teste 2",
+  "productCost": "12",
+  "shippingCost": "0.00",
+  "marketingFee": "30"
+}
+
+###
+GET http://localhost:3000/pricings/store/db7bed37-0013-4b5d-9e79-95432be1c959
+Content-Type: application/json
+
