@@ -26,7 +26,7 @@ export const Sidebar = styled.div`
     margin-top: 40px;
     list-style-type: none;
 
-    li {
+    li a {
       display: flex;
       align-items: center;
       gap: 8px;
@@ -35,7 +35,8 @@ export const Sidebar = styled.div`
       cursor: pointer;
       transition: all 100ms;
     }
-    li:hover {
+
+    li a:hover {
       padding-left: 8px;
     }
 

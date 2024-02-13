@@ -2,12 +2,14 @@ import { ReactNode } from "react";
 import { Container, Content, Main, Sidebar, Title, ToolBar } from "./styles";
 
 import { CiLogout, CiSettings, CiBadgeDollar, CiShop } from "react-icons/ci";
+import Link from "next/link";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 export function Layout({ children }: LayoutProps) {
+  const prefix = "/dashboard";
   return (
     <Container>
       <Sidebar>
@@ -15,20 +17,28 @@ export function Layout({ children }: LayoutProps) {
 
         <ul>
           <li>
-            <CiShop size={25} />
-            Home
+            <Link href={`${prefix}`}>
+              <CiShop size={25} />
+              Home
+            </Link>
           </li>
           <li>
-            <CiBadgeDollar size={25} />
-            Precificação
+            <Link href={`${prefix}/pricing`}>
+              <CiBadgeDollar size={25} />
+              Precificação
+            </Link>
           </li>
           <li>
-            <CiSettings size={25} />
-            Configurações
+            <Link href={`${prefix}/settings`}>
+              <CiSettings size={25} />
+              Configurações
+            </Link>
           </li>
           <li>
-            <CiLogout size={25} />
-            Sair
+            <Link href="/logout">
+              <CiLogout size={25} />
+              Sair
+            </Link>
           </li>
         </ul>
       </Sidebar>
