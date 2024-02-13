@@ -3,4 +3,7 @@ export class CreateStoreDto {
   userId: string;
   name: string;
   storeUrl: string;
+  cardFee: number;
+  checkoutFee: number;
+  gatewayFee: number;
 }

@@ -35,3 +35,13 @@ Content-Type: application/json
   "storeUrl": "asdasd.myshopify.com",
   "userId": "82b3cf4c-a89e-41db-a189-c78beacd2c81"
 }
+
+###
+PATCH http://localhost:3000/store/db7bed37-0013-4b5d-9e79-95432be1c959
+Content-Type: application/json
+
+{
+    "cardFee": "4.98",
+    "checkoutFee": "2.5",
+    "gatewayFee": "0.99"
+}
