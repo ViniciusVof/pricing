@@ -18,15 +18,17 @@ export class StoreService {
     return this.storeRepo.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} store`;
+  findOne(id: string) {
+    return this.storeRepo.findOne({
+      where: { id },
+    });
   }
 
-  update(id: number, updateStoreDto: UpdateStoreDto) {
-    return `This action updates a #${id} store`;
+  update(id: string, updateStoreDto: UpdateStoreDto) {
+    return this.storeRepo.update({ id }, updateStoreDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} store`;
+  remove(id: string) {
+    return this.storeRepo.delete({ id });
   }
 }
