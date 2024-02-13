@@ -17,6 +17,10 @@ export class Store {
   @Column()
   storeUrl: string;
 
+  @Column()
+  userId: string;
+
   @ManyToOne(() => User, (user) => user.stores)
+  @JoinColumn({ name: 'userId', referencedColumnName: 'id' })
   user: User;
 }

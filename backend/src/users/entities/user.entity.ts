@@ -22,8 +22,8 @@ export class User {
   @Column()
   password: string;
 
-  @OneToMany(() => Store, (store) => store.user)
-  stores: Store[];
+  @OneToMany(() => Store, (store) => store.user, { onDelete: 'CASCADE' })
+  stores?: Store[];
 
   @CreateDateColumn()
   createdAt: Date;
