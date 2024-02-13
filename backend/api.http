@@ -1,0 +1,37 @@
+GET http://localhost:3000/users
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "fullName": "Vinicius Oliveira de Freitas",
+  "email": "vinicius.asd@outlook.com",
+  "password": "123456"
+}
+
+
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "vinicius.asd@outlook.com",
+  "password": "123456"
+}
+
+###
+GET http://localhost:3000/store
+Content-Type: application/json
+
+###
+POST http://localhost:3000/store
+Content-Type: application/json
+
+{
+  "name": "asdasd",
+  "storeUrl": "asdasd.myshopify.com",
+  "userId": "152007aa-31af-4533-970e-04fcec840af2"
+}
